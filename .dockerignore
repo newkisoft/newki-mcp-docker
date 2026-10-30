@@ -2,3 +2,5 @@
 **/obj/
 **/.git/
 **/.env
+newki-mcp/bin
+newki-mcp/obj

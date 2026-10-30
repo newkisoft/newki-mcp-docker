@@ -2,7 +2,9 @@ FROM mcr.microsoft.com/dotnet/sdk:10.0 AS build
 WORKDIR /src
 COPY newki-mcp/newki-mcp.csproj newki-mcp/
 RUN dotnet restore newki-mcp/newki-mcp.csproj
-COPY newki-mcp/ newki-mcp/
+COPY newki-mcp/Program.cs newki-mcp/
+COPY newki-mcp/StockTools.cs newki-mcp/
+COPY newki-mcp/appsettings.json newki-mcp/
 RUN dotnet publish newki-mcp/newki-mcp.csproj -c Release -o /app/publish --no-restore
 
 FROM mcr.microsoft.com/dotnet/aspnet:10.0 AS runtime
