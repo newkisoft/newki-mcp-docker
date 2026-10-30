@@ -2,10 +2,10 @@
 
 Docker packaging for `../newki-mcp`.
 
-From the parent directory:
+The local `.env` file contains the database connection string and is excluded from Git. Start or rebuild the long-running container with:
 
 ```bash
-docker compose -f newki-mcp-docker/docker-compose.yml up --build
+./newki-mcp-docker/rundocker.sh
 ```
 
-Set `ConnectionStrings__DefaultConnection` in the shell or in a local `.env` file. Do not commit credentials.
+The MCP endpoint is available at `http://localhost:8020/mcp`.
