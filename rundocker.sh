@@ -10,6 +10,6 @@ if [[ ! -f "$ENV_FILE" ]]; then
   exit 1
 fi
 
-docker compose --env-file "$ENV_FILE" -f "$COMPOSE_FILE" up -d --build
-docker compose --env-file "$ENV_FILE" -f "$COMPOSE_FILE" ps
+sudo docker compose --env-file "$ENV_FILE" -f "$COMPOSE_FILE" up -d --build
+sudo docker compose --env-file "$ENV_FILE" -f "$COMPOSE_FILE" ps
 
