@@ -3,11 +3,10 @@ services:
     build:
       context: ..
       dockerfile: newki-mcp-docker/Dockerfile
-    ports:
-      - "8020:8020"
+    network_mode: host
     environment:
       ConnectionStrings__DefaultConnection: ${ConnectionStrings__DefaultConnection:?Set the SQL Server connection string}
-      Database__Provider: ${Database__Provider:-SqlServer}
+      Database__Provider: ${Database__Provider:-PostgreSql}
       Database__RequireCognito: ${Database__RequireCognito:-false}
       Database__CognitoAuthority: ${Database__CognitoAuthority:-}
       Database__CognitoAudience: ${Database__CognitoAudience:-}
