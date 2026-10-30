@@ -4,6 +4,9 @@ COPY newki-mcp/newki-mcp.csproj newki-mcp/
 RUN dotnet restore newki-mcp/newki-mcp.csproj
 COPY newki-mcp/Program.cs newki-mcp/
 COPY newki-mcp/StockTools.cs newki-mcp/
+COPY newki-mcp/DatabaseOptions.cs newki-mcp/
+COPY newki-mcp/DatabaseServices.cs newki-mcp/
+COPY newki-mcp/SqlReadOnlyValidator.cs newki-mcp/
 COPY newki-mcp/appsettings.json newki-mcp/
 RUN dotnet publish newki-mcp/newki-mcp.csproj -c Release -o /app/publish --no-restore
 

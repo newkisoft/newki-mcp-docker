@@ -7,4 +7,9 @@ services:
       - "8020:8020"
     environment:
       ConnectionStrings__DefaultConnection: ${ConnectionStrings__DefaultConnection:?Set the SQL Server connection string}
+      Database__Provider: ${Database__Provider:-SqlServer}
+      Database__RequireCognito: ${Database__RequireCognito:-false}
+      Database__CognitoAuthority: ${Database__CognitoAuthority:-}
+      Database__CognitoAudience: ${Database__CognitoAudience:-}
+      Database__TenantColumn: ${Database__TenantColumn:-}
     restart: unless-stopped
