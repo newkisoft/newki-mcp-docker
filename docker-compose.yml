@@ -1,0 +1,10 @@
+services:
+  newki-mcp:
+    build:
+      context: ..
+      dockerfile: newki-mcp-docker/Dockerfile
+    ports:
+      - "8020:8020"
+    environment:
+      ConnectionStrings__DefaultConnection: ${ConnectionStrings__DefaultConnection:?Set the SQL Server connection string}
+    restart: unless-stopped
